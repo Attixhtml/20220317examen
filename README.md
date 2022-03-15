@@ -1,9 +1,9 @@
 # 20220317examen
 
-#Scripts git
+# Scripts git
 
 ## Rebase con interactive:
-
+```
 #!/usr/bin/env bash
 git init
 touch f1
@@ -25,10 +25,11 @@ git --no-pager log --oneline --all
 #hasta aqui
 git rebase --interactive <commit-antes-de-lo-que-queremos-borrar>
 #cambiar 'pick' por 'drop'
+```
 
-
-##EXPLICACIÓN: Si solo una rama modifica un fichero, al
+## EXPLICACIÓN: Si solo una rama modifica un fichero, al
 #mergear, esos cambios serán aceptados sin conflicto
+```
 
 rm -rf .git
 rm f1
@@ -55,8 +56,10 @@ git commit -m "+f1:L1:L2:+MOD"
 git merge --no-ff --no-edit rama1
 git --no-pager log --oneline --all --graph
 
-##Crear rama orphan
+```
+## Crear rama orphan
 
+```
 cd repository
 git checkout --orphan orphan_name
 git rm -rf .
@@ -66,8 +69,10 @@ git add README.md
 git commit -a -m "Initial Commit"
 git push origin orphan_name
 
-##Git actions
+```
+## Git actions
 
+```
 name: GitHub Actions Demo
 on: 
   push:
@@ -89,4 +94,4 @@ jobs:
       - name: Que ruta es
         run: pwd
       - run: echo "🍏 This job's status is ${{ job.status }}."
-
+```
